@@ -5,9 +5,7 @@ import java.io.Serializable;
 /**
  * @author yejunyu
  * @date 2018/4/2.
- */
 
-/**
  * 序列化的源码
  * obj = desc.isInstantiable() ? desc.newInstance() : null;
  * 序列化是通过反射调用无参构造器创建一个新的对象
