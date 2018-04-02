@@ -9,7 +9,7 @@ package singleton;
  * 懒汉模式
  */
 public class Singleton2 {
-    private Singleton2 instance;
+    private static Singleton2 instance;
 
     private Singleton2() {}
 
