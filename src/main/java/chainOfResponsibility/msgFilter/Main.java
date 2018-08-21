@@ -8,6 +8,7 @@ public class Main {
 
     /**
      * Main -> FilterChain -> Filter
+     * 单向的过滤链
      *
      * @param args
      */
