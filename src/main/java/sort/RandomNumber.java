@@ -8,11 +8,12 @@ import java.util.Random;
  */
 public class RandomNumber {
 
-    public static int[] createSortNumber(int size, int minNum, int maxNum){
-        int[] numArr = new int[size];
+    public static Integer[] createSortNumber(int size, int minNum, int maxNum) {
+        Integer[] numArr = new Integer[size];
         Random random = new Random();
         for (int i = 0; i < size; i++) {
-            numArr[i] = minNum + random.nextInt(maxNum-minNum);
+            // +1 代表左闭右闭区间
+            numArr[i] = minNum + random.nextInt(maxNum - minNum + 1);
         }
         return numArr;
     }

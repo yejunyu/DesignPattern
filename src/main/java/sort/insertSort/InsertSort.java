@@ -1,22 +1,19 @@
 package sort.insertSort;
 
-import sort.RandomNumber;
-
-import java.util.Arrays;
+import sort.CallBack;
 
 /**
  * @author yejunyu
  * @date 2018/3/25.
  */
-public class InsertSort {
+public class InsertSort implements CallBack {
 
-    public static void main(String[] args) {
-        int n = 100;
-        int size = 10;
-        int[] arrNum = RandomNumber.createSortNumber(size,0,n);
-        for (int i = 0; i < size; i++) {
+    public InsertSort() {
+        System.out.println("插入排序");
+    }
 
-        }
-        System.out.println(Arrays.toString(arrNum));
+    @Override
+    public <T extends Comparable<T>> T[] sort(T[] ts) {
+        return null;
     }
 }

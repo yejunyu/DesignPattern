@@ -1,30 +1,36 @@
 package sort.selectionSort;
 
-import sort.RandomNumber;
-
-import java.util.Arrays;
+import sort.CallBack;
 
 /**
  * @author yejunyu
  * @date 2018/3/25.
  */
-public class SelectionSort {
+public class SelectionSort implements CallBack {
+    public SelectionSort() {
+        System.out.println("选择排序");
+    }
 
-    public static void main(String[] args) {
-        int n = 100;
-        int size = 10;
-        int[] arrNum = RandomNumber.createSortNumber(size,0,n);
-        for (int i = 0; i < size; i++) {
-            int minIndex = i;
-            for (int j = i+1; j < size; j++) {
-                if (arrNum[j] < arrNum[minIndex]){
-                    minIndex = j;
+    @Override
+    public <T extends Comparable<T>> T[] sort(T[] ts) {
+        int min;
+        T temp;
+        for (int i = 0, size = ts.length; i < size; i++) {
+            // 初始化未排序序列中最小数据数组下标
+            min = i;
+            for (int j = i + 1; j < size; j++) {
+                // 在未排序元素中继续寻找最小元素，并保存其下标
+                if (ts[j].compareTo(ts[min]) < 0) {
+                    min = j;
                 }
             }
-            int temp = arrNum[i];
-            arrNum[i] = arrNum[minIndex];
-            arrNum[minIndex] = temp;
+            // 将未排序列中最小元素放到已排序列末尾
+            if (min != i) {
+                temp = ts[min];
+                ts[min] = ts[i];
+                ts[i] = temp;
+            }
         }
-        System.out.println(Arrays.toString(arrNum));
+        return ts;
     }
 }
