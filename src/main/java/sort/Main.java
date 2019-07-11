@@ -15,10 +15,14 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        Integer[] arr = RandomNumber.createSortNumber(10000, 100, 200000);
+        int size = 10000;
+        Integer[] arr = RandomNumber.createSortNumber(size, 100, 200000);
+        Integer[] arr1 = Helper.copyArr(arr);
+        Integer[] arr2 = Helper.copyArr(arr);
+        Integer[] arr3 = Helper.copyArr(arr);
         System.out.println("排序前: " + Arrays.toString(arr));
         Helper.getTime(new SelectionSort(), arr);
-        Helper.getTime(new BubbleSort(), arr);
-        Helper.getTime(new InsertSort(), arr);
+        Helper.getTime(new BubbleSort(), arr1);
+        Helper.getTime(new InsertSort(), arr2);
     }
 }
