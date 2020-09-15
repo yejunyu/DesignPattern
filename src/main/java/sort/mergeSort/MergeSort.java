@@ -13,9 +13,14 @@ public class MergeSort implements CallBack {
         System.out.println("归并排序");
     }
 
+
     @Override
     public <T extends Comparable<T>> T[] sort(T[] ts) {
+        mergeSort(ts, 0, ts.length - 1);
+        return ts;
+    }
 
-        return null;
+    private <T extends Comparable> void mergeSort(T[] ts, int l, int r) {
+
     }
 }
