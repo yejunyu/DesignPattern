@@ -20,7 +20,17 @@ public class MergeSort implements CallBack {
         return ts;
     }
 
-    private <T extends Comparable> void mergeSort(T[] ts, int l, int r) {
+    private <T extends Comparable<T>> void mergeSort(T[] ts, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int mid = (l + r) / 2;
+        mergeSort(ts, l, mid);
+        mergeSort(ts, mid + 1, r);
+        merge(ts, l, mid, r);
+    }
+
+    private <T extends Comparable<T>> void merge(T[] ts, int l, int mid, int r) {
 
     }
 }

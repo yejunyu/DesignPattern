@@ -1,10 +1,6 @@
 package sort.quickSort;
 
 import sort.CallBack;
-import sort.Helper;
-import sort.RandomNumber;
-
-import java.util.Arrays;
 
 /**
  * @author: YeJunyu
@@ -18,7 +14,7 @@ public class QuickSort implements CallBack {
         System.out.println("快速排序");
     }
 
-    private static <T extends Comparable> void quick(T[] ts, int left, int right) {
+    public <T extends Comparable<T>> void quick(T[] ts, int left, int right) {
         if (left > right) {
             return;
         }
@@ -33,7 +29,7 @@ public class QuickSort implements CallBack {
             }
             if (i < j) {
                 T temp = ts[i];
-                ts[i] = temp;
+                ts[i] = ts[j];
                 ts[j] = temp;
             }
         }
@@ -47,19 +43,5 @@ public class QuickSort implements CallBack {
     public <T extends Comparable<T>> T[] sort(T[] ts) {
         quick(ts, 0, ts.length - 1);
         return ts;
-    }
-
-    public static void main(String[] args) {
-        int size = 10;
-        Integer[] arr = RandomNumber.createSortNumber(size, 100, 200000);
-        Integer[] arr1 = Helper.copyArr(arr);
-        System.out.println("排序前: " + Arrays.toString(arr));
-//        Thread.sleep(20_000L);
-        Helper.getTime(new QuickSort(), arr);
-        QuickSort q = new QuickSort();
-        Integer[] arr2 = new Integer[]{146944, 86014, 111975, 198014, 121709, 146944, 151141, 154431, 163805, 198014};
-        Integer[] sort = q.sort(arr2);
-        System.out.println(Arrays.toString(sort));
-
     }
 }
