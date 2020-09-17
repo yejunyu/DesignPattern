@@ -38,9 +38,7 @@ public class MergeSort implements CallBack {
     private <T extends Comparable<T>> void merge(T[] ts, int l, int mid, int r) {
         T[] aux = (T[]) Array.newInstance(ts.getClass().getComponentType(), r - l + 1);
         // 复制一个数组用于辅助调整位置
-        for (int i = l; i < r + 1; i++) {
-            aux[i - l] = ts[i];
-        }
+        System.arraycopy(ts, l, aux, 0, r + 1 - l);
         int i = l, j = mid + 1;
         for (int k = l; k < r + 1; k++) {
             if (i > mid) {

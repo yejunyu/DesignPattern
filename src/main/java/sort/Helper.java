@@ -14,7 +14,21 @@ public class Helper {
         T[] a = callBack.sort(arr);
         long endTime = System.currentTimeMillis();
         System.out.println("执行时间为: " + (endTime - startTime) + " ms");
-        System.out.println("排序后: " + Arrays.toString(a));
+        print(a);
+        System.out.println("......");
+    }
+
+    private static <T> void print(T[] a) {
+        int length = a.length;
+        int n = 20;
+        if (length > n) {
+            for (int i = 0; i <= n; i++) {
+                System.out.print(a[i] + " ");
+            }
+        } else {
+            System.out.println(Arrays.toString(a));
+        }
+
     }
 
     public static Integer[] copyArr(Integer[] arr) {
