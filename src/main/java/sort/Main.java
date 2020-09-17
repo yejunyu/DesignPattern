@@ -1,6 +1,7 @@
 package sort;
 
 import sort.bubbleSort.BubbleSort;
+import sort.mergeSort.MergeSort;
 import sort.quickSort.QuickSort;
 import sort.selectionSort.SelectionSort;
 
@@ -24,5 +25,6 @@ public class Main {
         Helper.getTime(new SelectionSort(), arr);
         Helper.getTime(new BubbleSort(), arr1);
         Helper.getTime(new QuickSort(), arr2);
+        Helper.getTime(new MergeSort(), arr3);
     }
 }
