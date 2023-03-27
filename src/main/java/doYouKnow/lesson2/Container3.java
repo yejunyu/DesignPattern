@@ -23,9 +23,9 @@ public class Container3 {
     }
 
     public Container3 findRootAndCompress() {
-//        if (parent != this) {
-//            parent = parent.findRootAndCompress();
-//        }
+        if (parent != this) {
+            parent = parent.findRootAndCompress();
+        }
         return parent;
     }
 
@@ -55,7 +55,6 @@ public class Container3 {
         Container3 root = findRootAndCompress();
         root.amount += amount / root.size;
     }
-
 
     /**
      * 获取直接或间接的容器数

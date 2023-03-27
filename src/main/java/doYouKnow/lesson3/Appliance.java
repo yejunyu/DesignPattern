@@ -1,5 +1,7 @@
 package doYouKnow.lesson3;
 
+import javax.swing.text.Utilities;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -50,4 +52,12 @@ public class Appliance {
     public Appliance(int power) {
         this.power = power;
     }
+
+    public static void main(String[] args) {
+        BigInteger bigInteger = new BigInteger("24");
+        BigInteger gcd = bigInteger.gcd(BigInteger.TWO);
+        System.out.println(gcd);
+    }
+
+
 }
