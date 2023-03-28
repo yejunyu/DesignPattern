@@ -1,4 +1,4 @@
-package doYouKnow.lesson2.abtractContainer;
+package doYouKnow.lesson8;
 
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
